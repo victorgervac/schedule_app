@@ -8,6 +8,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  user_type              :integer          default("cleaner")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -17,8 +18,16 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 class User < ApplicationRecord
+  self.inheritance_column = :_type_disabled
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable
+
+  has_many :locations, class_name: "Location", foreign_key: :client_id, dependent: :destroy
+  # inverse_of: "client"
+  enum user_type: { cleaner: 0, client: 1 }
 end

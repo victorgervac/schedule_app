@@ -24,7 +24,6 @@ group :production do
 end
 
 group :development do
-  gem "amazing_print"
   gem "annotate"
   gem "brakeman", require: false
   gem "bundler-audit", require: false
@@ -57,4 +56,6 @@ end
 # Use Redis for Action Cable
 gem "redis", "~> 4.0"
 
+gem "amazing_print"
 gem "devise"
+gem "pry-rails"

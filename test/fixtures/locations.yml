@@ -1,0 +1,47 @@
+# == Schema Information
+#
+# Table name: locations
+#
+#  id               :bigint           not null, primary key
+#  address_line_one :string
+#  address_line_two :string
+#  city             :string
+#  cleaner_title    :string
+#  client_title     :string
+#  details          :text
+#  state            :string
+#  zip              :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  user_id          :bigint           not null
+#
+# Indexes
+#
+#  index_locations_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
+
+one:
+  address_line_one: MyString
+  address_line_two: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  client_title: MyString
+  cleaner_title: MyString
+  details: MyText
+  client: one
+
+two:
+  address_line_one: MyString
+  address_line_two: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  client_title: MyString
+  cleaner_title: MyString
+  details: MyText
+  client: two
