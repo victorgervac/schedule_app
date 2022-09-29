@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: schedule_app_development
+  usename: vgervacio
+
+test:
+  <<: *default
+  database: schedule_app_test
+  usename: vgervacio
+
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
