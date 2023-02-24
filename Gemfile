@@ -18,6 +18,7 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
 
+
 group :production do
   gem "postmark-rails"
   gem "sidekiq"
@@ -26,6 +27,7 @@ end
 group :development do
   gem "annotate"
   gem "brakeman", require: false
+ 
   gem "bundler-audit", require: false
   gem "erb_lint", require: false
   gem "letter_opener"
@@ -34,12 +36,19 @@ group :development do
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
   gem "web-console"
+  gem "better_errors"
+  gem 'html2haml'
+  gem "binding_of_caller"
+  gem "erb_lint"
+  gem "htmlbeautifier"
+  gem "launchy"
+  gem "rufo"
+  
 end
 
 group :development, :test do
   gem "byebug"
   gem "dotenv-rails"
-  gem "launchy"
   gem "syntax_suggest"
 end
 
