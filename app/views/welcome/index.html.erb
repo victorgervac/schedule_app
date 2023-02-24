@@ -1,3 +1,31 @@
 <h1>Welcome</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
-<%= current_user ? current_user.attributes : nill %>
+<br>
+<%#= current_user ? current_user.attributes : nill %>
+
+<%# %w[dog cat horse].each do |animal|%>
+ <%#=animal %>
+<%#end%>
+<% days = (Date.today.beginning_of_week - 14.days .. Date.today.beginning_of_week - 1.day).to_a%>
+<div class="grid grid-cols-7 gap-4">
+<% days.each do |day| %>
+<div class="">
+  <button class="border-hidden">
+    <%= Date::ABBR_DAYNAMES[day.wday]%>
+    <p><%= day.day %></p>
+  </button>
+  </div>
+  <%#= day.wday %>
+  <%#= day.month%>  <%#= Date::MONTHNAMES[day.month]%> <%#= Date::ABBR_MONTHNAMES[day.month]%>
+  <%#= day.year%>
+<%end%>
+</div>
+
+<div class="mt-5">
+  <form accept-charset="UTF-8">
+    Time in
+      <input type="time" name="clock_in" id="clock_in" />
+    Time out
+      <input type="time" name="clock_out" id="clock_out" />
+  </form>
+</div>

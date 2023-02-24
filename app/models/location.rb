@@ -29,9 +29,9 @@ class Location < ApplicationRecord
   # scope :utah, -> { where(state: "UT") }
   # before_save :upcasing_state
 
-  private
+  # private
 
-  def upcasing_state
-    self.state = state.upcase
-  end
+  # def upcasing_state
+  #   self.state = state.upcase
+  # end
 end
