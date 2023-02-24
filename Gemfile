@@ -24,23 +24,28 @@ group :production do
 end
 
 group :development do
-  gem "amazing_print"
   gem "annotate"
   gem "brakeman", require: false
+
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bundler-audit", require: false
   gem "erb_lint", require: false
+  gem "html2haml"
+  gem "htmlbeautifier"
+  gem "launchy"
   gem "letter_opener"
   gem "rubocop", require: false
   gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
+  gem "rufo"
   gem "web-console"
 end
 
 group :development, :test do
   gem "byebug"
   gem "dotenv-rails"
-  gem "launchy"
   gem "syntax_suggest"
 end
 
@@ -55,6 +60,8 @@ group :test do
 end
 
 # Use Redis for Action Cable
-gem "redis", "~> 4.0"
-
+gem "amazing_print"
 gem "devise"
+gem "faraday"
+gem "pry-rails"
+gem "redis", "~> 4.0"

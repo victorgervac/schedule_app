@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   get "welcome/index"
   devise_for :users
   mount Sidekiq::Web => "/sidekiq" if defined?(Sidekiq) # monitoring console

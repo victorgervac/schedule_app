@@ -1,2 +1,33 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+
+
+<% days = (Date.today.beginning_of_week - 14.days..Date.today.beginning_of_week - 1.day).to_a %>
+
+<div class="grid grid-cols-7 gap-4">
+  <% days.each do |day| %>
+    <div class="">
+      <button class="border-hidden">
+        <%= Date::ABBR_DAYNAMES[day.wday] %>
+
+        <p><%= day.day %></p>
+      </button>
+    </div>
+<% end %>
+<button data-controller="fetch-locations" data-action="click->fetch-locations#fetch" >fetch</button>
+
+</div>
+
+  
+<div class="mt-5">
+  <form accept-charset="UTF-8">
+    Time in
+
+      <input type="time" name="clock_in" id="clock_in" />
+      Time out
+
+      <input type="time" name="clock_out" id="clock_out" />
+    </form>
+
+
+</div>
+
+
