@@ -18,7 +18,6 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
 
-
 group :production do
   gem "postmark-rails"
   gem "sidekiq"
@@ -27,23 +26,21 @@ end
 group :development do
   gem "annotate"
   gem "brakeman", require: false
- 
+
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bundler-audit", require: false
   gem "erb_lint", require: false
+  gem "html2haml"
+  gem "htmlbeautifier"
+  gem "launchy"
   gem "letter_opener"
   gem "rubocop", require: false
   gem "rubocop-minitest", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
-  gem "web-console"
-  gem "better_errors"
-  gem 'html2haml'
-  gem "binding_of_caller"
-  gem "erb_lint"
-  gem "htmlbeautifier"
-  gem "launchy"
   gem "rufo"
-  
+  gem "web-console"
 end
 
 group :development, :test do
@@ -63,8 +60,8 @@ group :test do
 end
 
 # Use Redis for Action Cable
-gem "redis", "~> 4.0"
-
 gem "amazing_print"
 gem "devise"
+gem "faraday"
 gem "pry-rails"
+gem "redis", "~> 4.0"

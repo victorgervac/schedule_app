@@ -139,6 +139,10 @@ GEM
       smart_properties
     erubi (1.11.0)
     erubis (2.7.0)
+    faraday (2.3.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.3)
     globalid (1.0.0)
       activesupport (>= 5.0)
     good_migrations (0.2.1)
@@ -349,6 +353,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   erb_lint
+  faraday
   good_migrations
   html2haml
   htmlbeautifier
